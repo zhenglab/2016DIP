@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/dh/program/cmake/DIP/interpolation/double-pots/main.cpp" "/home/dh/program/cmake/DIP/interpolation/double-pots/CMakeFiles/processing.dir/main.cpp.o"
+  "/home/dh/program/cmake/DIP/interpolation/Bilinear-pots/main.cpp" "/home/dh/program/cmake/DIP/interpolation/Bilinear-pots/CMakeFiles/processing.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

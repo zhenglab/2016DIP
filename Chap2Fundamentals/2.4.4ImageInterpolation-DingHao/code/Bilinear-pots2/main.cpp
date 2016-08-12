@@ -50,8 +50,8 @@ using namespace std;
 	{
 		for(int j = 0; j < ncol-1; j++)
 		{
-			X= cvRound ( i / (double)x );
-			Y= cvRound ( j / (double)x );
+			X= i / (double)x ;
+			Y= j / (double)x ;
 			float ux=(int)X,uy=(int)Y;
 			ux=abs(ux-X);uy=abs(uy-Y);
 			

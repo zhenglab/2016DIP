@@ -1,3 +1,3 @@
-/home/dh/program/cmake/DIP/interpolation/double-pots/CMakeFiles/edit_cache.dir
-/home/dh/program/cmake/DIP/interpolation/double-pots/CMakeFiles/rebuild_cache.dir
-/home/dh/program/cmake/DIP/interpolation/double-pots/CMakeFiles/processing.dir
+/home/dh/program/cmake/DIP/interpolation/Bilinear-pots/CMakeFiles/edit_cache.dir
+/home/dh/program/cmake/DIP/interpolation/Bilinear-pots/CMakeFiles/rebuild_cache.dir
+/home/dh/program/cmake/DIP/interpolation/Bilinear-pots/CMakeFiles/processing.dir

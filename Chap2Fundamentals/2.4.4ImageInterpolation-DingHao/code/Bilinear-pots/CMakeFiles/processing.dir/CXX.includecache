@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/dh/program/cmake/DIP/interpolation/double-pots/main.cpp
+/home/dh/program/cmake/DIP/interpolation/Bilinear-pots/main.cpp
 iostream
 -
 opencv2/imgproc/imgproc.hpp

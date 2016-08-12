@@ -50,8 +50,8 @@ using namespace std;
 	{
 		for(int j = 0; j < ncol-1; j++)
 		{
-			X= cvRound ( i / (double)x );
-			Y= cvRound ( j / (double)x );
+			X= i / (double)x ;
+			Y= j / (double)x ;
 			float ux=(int)X,uy=(int)Y;
 			ux=abs(ux-X);uy=abs(uy-Y);
 			
@@ -74,10 +74,18 @@ using namespace std;
 			d.val[2]=d.val[2]*ux*uy;
 			}
 		//系数相加为处理后的点值
-				dst.at<cv::Vec3b>(i,j)[0]=a.val[0]+b.val[0]+c.val[0]+d.val[0];
-				dst.at<cv::Vec3b>(i,j)[1]=a.val[1]+b.val[1]+c.val[1]+d.val[1];
-				dst.at<cv::Vec3b>(i,j)[2]=a.val[2]+b.val[2]+c.val[2]+d.val[2];
-			
+				dst.at<cv::Vec3b>(i,j)[0]=(int)(a.val[0]+b.val[0]+c.val[0]+d.val[0]);
+				dst.at<cv::Vec3b>(i,j)[1]=(int)(a.val[1]+b.val[1]+c.val[1]+d.val[1]);
+				dst.at<cv::Vec3b>(i,j)[2]=(int)(a.val[2]+b.val[2]+c.val[2]+d.val[2]);
+
+			if(a.val[0]+b.val[0]+c.val[0]+d.val[0] > 255)
+			{dst.at<cv::Vec3b>(i,j)[0] = 255;}
+
+			if(a.val[1]+b.val[1]+c.val[0]+d.val[1] > 255)
+			{dst.at<cv::Vec3b>(i,j)[1] = 255;}
+
+			if(a.val[2]+b.val[2]+c.val[0]+d.val[2] > 255)
+			{dst.at<cv::Vec3b>(i,j)[2] = 255;}
 		}
 	}        
 
