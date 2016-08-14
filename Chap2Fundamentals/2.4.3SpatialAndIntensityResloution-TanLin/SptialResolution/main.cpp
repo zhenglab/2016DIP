@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
 
-Mat srcimage=imread("11.tif");
+Mat srcimage=imread("1250dpi.jpg");
 if(!srcimage.data)
 
 {
@@ -21,7 +21,6 @@ return 0;
 }
 cout << "image Info:Height:" << srcimage.size().height << " Width:" << srcimage.size().width << endl;
 imshow("origin",srcimage);
-imwrite("1250.jpg",srcimage);
 int a[3]={4,8,16};
 int nl = srcimage.rows;
 int nc = srcimage.cols ;
@@ -29,7 +28,6 @@ for(int w=0;w<3;w++)
 {
 int r=nl/a[w];
 int c=nc/a[w];
-int sum1,sum2,sum3,avg1,avg2,avg3;
 Mat dstimage;
 dstimage.create(r,c,srcimage.type());
  CvScalar  sum,avg;
