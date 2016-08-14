@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1471056778 source:/home/taohong/taohong/1/5/main.cpp
-	"opencv2/core/core.hpp"
-	"opencv2/features2d/features2d.hpp"
-	"opencv2/highgui/highgui.hpp"
-	"opencv2/nonfree/nonfree.hpp"
-	<iostream>
-
