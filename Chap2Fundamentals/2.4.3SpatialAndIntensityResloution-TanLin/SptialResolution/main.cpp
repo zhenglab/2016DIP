@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
 
-Mat srcimage=imread("11.tif");
+Mat srcimage=imread("1250dpi.jpg");
 if(!srcimage.data)
 
 {
@@ -25,25 +25,44 @@ int a[3]={4,8,16};
 int nl = srcimage.rows;
 int nc = srcimage.cols ;
 for(int w=0;w<3;w++)
- {
-int l= (int)(nl/a[w]+0.5);
-int c= (int)(nc/a[w]+0.5);
+{
+int r=nl/a[w];
+int c=nc/a[w];
 Mat dstimage;
-dstimage.create(l,c,srcimage.type());
-for(int i=0;i<l;i++)
+dstimage.create(r,c,srcimage.type());
+ CvScalar  sum,avg;
+for(int x=0;x<r;x++)
+{
+ for(int y=0;y<c;y++)
+   {
+     sum=0;
+     
+     for(int i=a[w]*x;i<a[w]*(x+1);i++)
 	{ 
-         for(int j=0;j<c;j++)
+         for(int j=a[w]*y;j<a[w]*(y+1);j++)
          	{
-               dstimage.at<Vec3b>(i,j)[0]=srcimage.at<Vec3b>(a[w]*i,a[w]*j)[0];
-               dstimage.at<Vec3b>(i,j)[1]=srcimage.at<Vec3b>(a[w]*i,a[w]*j)[1];
-               dstimage.at<Vec3b>(i,j)[2]=srcimage.at<Vec3b>(a[w]*i,a[w]*j)[2];
-
+		
+                sum.val[0]=sum.val[0]+srcimage.at<Vec3b>(i,j)[0];
+               
+                sum.val[1]=sum.val[1]+srcimage.at<Vec3b>(i,j)[1];
+                
+                sum.val[2]=sum.val[2]+srcimage.at<Vec3b>(i,j)[2];
+                
+               
 		}
-	} 
-String str[3]={"300dpi.tif","150dpi.tif","72dpi.tif"};
+	 } 
+                
+		dstimage.at<Vec3b>(x,y)[0]=sum.val[0]/(a[w]*a[w]);
+                dstimage.at<Vec3b>(x,y)[1]=sum.val[1]/(a[w]*a[w]);
+                dstimage.at<Vec3b>(x,y)[2]=sum.val[2]/(a[w]*a[w]);
+
+    }
+}
+String str[3]={"300dpi.jpg","150dpi.jpg","72dpi.jpg"};
 imshow(str[w],dstimage);
 imwrite(str[w], dstimage);
 }
+
 waitKey(0);
 return 0;
 }
