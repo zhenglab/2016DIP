@@ -1,2 +1,2 @@
 # 2016DIP
-Learning Reports, Slides, and Codes about "Digital Image Processing" of 2016 MS Students.
+Learning Reports, Slides, and Codes about "Digital Image Processing" at 2016.
