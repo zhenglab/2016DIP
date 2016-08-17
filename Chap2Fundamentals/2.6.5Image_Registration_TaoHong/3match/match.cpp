@@ -61,7 +61,6 @@ int main(int argc, char** argv)
     {
     printf(">符合条件的匹配点[%d] 特征点1：--%d 特征点2：%d \n",i,good_matches[i].queryIdx,good_matches[i].trainIdx);
     }
-
     imshow("匹配效果图", img_matches);
 
     waitKey(0);
