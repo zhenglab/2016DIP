@@ -1,0 +1,3 @@
+/home/dh/program/cmake/DIP/2.4.4interpolation/Bicubic-pots/CMakeFiles/edit_cache.dir
+/home/dh/program/cmake/DIP/2.4.4interpolation/Bicubic-pots/CMakeFiles/rebuild_cache.dir
+/home/dh/program/cmake/DIP/2.4.4interpolation/Bicubic-pots/CMakeFiles/processing.dir
