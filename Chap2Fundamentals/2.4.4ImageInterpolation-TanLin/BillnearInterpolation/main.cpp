@@ -57,9 +57,9 @@ void zoom(Mat& src, Mat& dst)
             p3=src.at<cv::Vec3b>( (iu+1), iv);  
             p4=src.at<cv::Vec3b>((iu+1), (iv+1));  
   
-            dst.at<cv::Vec3b>(i,j)[0] = (p1.val[0]*(1-abs(x-iu)) + p3.val[0]*(x-iu))*(1-abs(y-iv)) + (p2.val[0]*(1-abs(x-iu))+p4.val[0]*(x-iu))*(y-iv);  
-           dst.at<cv::Vec3b>(i,j)[1] = (p1.val[1]*(1-abs(x-iu)) + p3.val[1]*(x-iu))*(1-abs(y-iv)) + (p2.val[1]*(1-abs(x-iu))+p4.val[1]*(x-iu))*(y-iv);  
-           dst.at<cv::Vec3b>(i,j)[2] = (p1.val[2]*(1-abs(x-iu)) + p3.val[2]*(x-iu))*(1-abs(y-iv)) + (p2.val[2]*(1-abs(x-iu))+p4.val[2]*(x-iu))*(y-iv);  
+           dst.at<cv::Vec3b>(i,j)[0] = (p1.val[0]*(1-abs(x-iu)) + p3.val[0]*abs(x-iu))*(1-abs(y-iv)) + (p2.val[0]*(1-abs(x-iu))+p4.val[0]*abs(x-iu))*abs(y-iv);  
+           dst.at<cv::Vec3b>(i,j)[1] = (p1.val[1]*(1-abs(x-iu)) + p3.val[1]*abs(x-iu))*(1-abs(y-iv)) + (p2.val[1]*(1-abs(x-iu))+p4.val[1]*abs(x-iu))*abs(y-iv);  
+           dst.at<cv::Vec3b>(i,j)[2] = (p1.val[2]*(1-abs(x-iu)) + p3.val[2]*abs(x-iu))*(1-abs(y-iv)) + (p2.val[2]*(1-abs(x-iu))+p4.val[2]*abs(x-iu))*abs(y-iv);  
        
          }  
          //这里添加上最后一行  
