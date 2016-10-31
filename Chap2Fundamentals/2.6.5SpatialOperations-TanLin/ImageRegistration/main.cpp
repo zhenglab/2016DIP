@@ -16,7 +16,8 @@ int main()
           	return -1;  
       	}  
       
-	imshow("image", src);  
+	imshow("image", src);
+imwrite("ww.jpg",src);  
         Mat dst;
         float s=0.1;
 	int x,y;
